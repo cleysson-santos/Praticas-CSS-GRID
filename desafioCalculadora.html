@@ -30,7 +30,7 @@
             border-right: 0;
             border-bottom: 0;
             padding: 12px 10px 12px 150px;
-            margin: 20px 15px;
+            margin: 30px 15px;
             color: white;
             text-align: right;
             font-size: 30px;
@@ -43,257 +43,105 @@
                 "numero7        numero8                 numero9                 igual" 
                 "numero4        numero5                 numero6                 subtracao" 
                 "numero1        numero2                 numero3                 adicao"
-                "numero0        numero0                 virgula                 adicao"; 
-            margin: 25px 15px;
-            gap: 15px;
+                "numero0        numero0                 virgula                 adicao";
+            grid-template-columns: repeat(auto-fit, minmax(2em, 1fr));
+            margin: 40px 15px;
+            gap: 10px;
             font-size: 26px;
-            text-align: center;
+        }
+            
+        .gridItem {
+            max-width: 2.5em;
+            background: linear-gradient(#333333, #1f1c1c);
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            padding: 0.5em 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .ac {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: ac;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .porcentagem {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: porcentagem;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .multiplicacao {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: multiplicacao;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .divisao {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: divisao;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .igual {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: igual;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .subtracao {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: subtracao;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .adicao {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: adicao;
             grid-row: adicao;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .virgula {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: virgula;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .numero1 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero1;
             grid-row: numero1;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .numero2 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero2;
             grid-row: numero2;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+        
         .numero3 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero3;
             grid-row: numero3;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .numero4 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero4;
             grid-row: numero4;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .numero5 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero5;
             grid-row: numero5;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .numero6 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero6;
             grid-row: numero6;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .numero7 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero7;
             grid-row: numero7;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .numero8 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero8;
             grid-row: numero8;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
         .numero9 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero9;
             grid-row: numero9;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            width: 2.5em;
-            height: 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .numero0 {
-            background: linear-gradient(#333333, #1f1c1c);
             grid-column: numero0;
             grid-row: numero0;
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         </style>
 </head>
@@ -302,24 +150,24 @@
     <div class="container">
         <div class="output">0</div>
         <div class="botoes">
-            <div class="ac">AC</div>
-            <div class="porcentagem">%</div>
-            <div class="multiplicacao">x</div>
-            <div class="divisao">/</div>
-            <div class="igual">=</div>
-            <div class="subtracao">-</div>
-            <div class="adicao">+</div>
-            <div class="virgula">,</div>
-            <div class="numero0">0</div>
-            <div class="numero1">1</div>
-            <div class="numero2">2</div>
-            <div class="numero3">3</div>
-            <div class="numero4">4</div>
-            <div class="numero5">5</div>
-            <div class="numero6">6</div>
-            <div class="numero7">7</div>
-            <div class="numero8">8</div>
-            <div class="numero9">9</div>
+            <div class="gridItem ac">AC</div>
+            <div class="gridItem porcentagem">%</div>
+            <div class="gridItem multiplicacao">x</div>
+            <div class="gridItem divisao">/</div>
+            <div class="gridItem igual">=</div>
+            <div class="gridItem subtracao">-</div>
+            <div class="gridItem adicao">+</div>
+            <div class="gridItem virgula">,</div>
+            <div class="gridItem numero0">0</div>
+            <div class="gridItem numero1">1</div>
+            <div class="gridItem numero2">2</div>
+            <div class="gridItem numero3">3</div>
+            <div class="gridItem numero4">4</div>
+            <div class="gridItem numero5">5</div>
+            <div class="gridItem numero6">6</div>
+            <div class="gridItem numero7">7</div>
+            <div class="gridItem numero8">8</div>
+            <div class="gridItem numero9">9</div>
         </div>
     </div>
 </body>
