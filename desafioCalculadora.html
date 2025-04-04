@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            background: linear-gradient(340deg,#6166f5,#2f317d);
+            display: flex;
+            justify-content: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+        
+        .container {
+            background: linear-gradient(130deg, #557ca0, #2d4a74);
+            width: 350px;
+            height: 480px;
+            margin-top: 200px;
+            margin-bottom: 200px;
+            border-radius: 5px;
+            box-shadow: 0 1px 12px rgb(20, 20, 20);
+        }
+
+        .output {
+            background: linear-gradient(#323131, #1f1c1c);
+            border: 2.75px solid black;
+            border-right: 0;
+            border-bottom: 0;
+            padding: 12px 10px 12px 150px;
+            margin: 20px 15px;
+            color: white;
+            text-align: right;
+            font-size: 30px;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template:
+                "ac             porcentagem             multiplicacao           divisao"
+                "numero7        numero8                 numero9                 igual" 
+                "numero4        numero5                 numero6                 subtracao" 
+                "numero1        numero2                 numero3                 adicao"
+                "numero0        numero0                 virgula                 adicao"; 
+            margin: 25px 15px;
+            gap: 15px;
+            font-size: 26px;
+            text-align: center;
+        }
+        
+        .ac {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: ac;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .porcentagem {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: porcentagem;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .multiplicacao {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: multiplicacao;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .divisao {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: divisao;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .igual {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: igual;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .subtracao {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: subtracao;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .adicao {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: adicao;
+            grid-row: adicao;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .virgula {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: virgula;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero1 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero1;
+            grid-row: numero1;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero2 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero2;
+            grid-row: numero2;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero3 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero3;
+            grid-row: numero3;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero4 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero4;
+            grid-row: numero4;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero5 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero5;
+            grid-row: numero5;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero6 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero6;
+            grid-row: numero6;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero7 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero7;
+            grid-row: numero7;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero8 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero8;
+            grid-row: numero8;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numero9 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero9;
+            grid-row: numero9;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            width: 2.5em;
+            height: 2.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .numero0 {
+            background: linear-gradient(#333333, #1f1c1c);
+            grid-column: numero0;
+            grid-row: numero0;
+            border: 1px solid #8a8a8a;
+            border-right: 1px solid black;
+            border-bottom: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="output">0</div>
+        <div class="botoes">
+            <div class="ac">AC</div>
+            <div class="porcentagem">%</div>
+            <div class="multiplicacao">x</div>
+            <div class="divisao">/</div>
+            <div class="igual">=</div>
+            <div class="subtracao">-</div>
+            <div class="adicao">+</div>
+            <div class="virgula">,</div>
+            <div class="numero0">0</div>
+            <div class="numero1">1</div>
+            <div class="numero2">2</div>
+            <div class="numero3">3</div>
+            <div class="numero4">4</div>
+            <div class="numero5">5</div>
+            <div class="numero6">6</div>
+            <div class="numero7">7</div>
+            <div class="numero8">8</div>
+            <div class="numero9">9</div>
+        </div>
+    </div>
+</body>
+</html>
