@@ -6,169 +6,89 @@
 
     <style>
         body {
-            background: linear-gradient(340deg,#6166f5,#2f317d);
-            display: flex;
-            justify-content: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            font-family: sans-serif;
-        }
-        
-        .container {
-            background: linear-gradient(130deg, #557ca0, #2d4a74);
-            width: 350px;
-            height: 480px;
-            margin-top: 200px;
-            margin-bottom: 200px;
-            border-radius: 5px;
-            box-shadow: 0 1px 12px rgb(20, 20, 20);
-        }
-
-        .output {
-            background: linear-gradient(#323131, #1f1c1c);
-            border: 2.75px solid black;
-            border-right: 0;
-            border-bottom: 0;
-            padding: 12px 10px 12px 150px;
-            margin: 30px 15px;
-            color: white;
-            text-align: right;
-            font-size: 30px;
-        }
-
-        .botoes {
-            display: grid;
-            grid-template:
-                "ac             porcentagem             multiplicacao           divisao"
-                "numero7        numero8                 numero9                 igual" 
-                "numero4        numero5                 numero6                 subtracao" 
-                "numero1        numero2                 numero3                 adicao"
-                "numero0        numero0                 virgula                 adicao";
-            grid-template-columns: repeat(auto-fit, minmax(2em, 1fr));
-            margin: 40px 15px;
-            gap: 10px;
-            font-size: 26px;
-        }
-            
-        .gridItem {
-            max-width: 2.5em;
-            background: linear-gradient(#333333, #1f1c1c);
-            border: 1px solid #8a8a8a;
-            border-right: 1px solid black;
-            border-bottom: 0;
-            padding: 0.5em 0;
-            color: white;
+            background-image: linear-gradient(#6166f5,#2f317d);
             display: flex;
             justify-content: center;
             align-items: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
         }
         
-        .ac {
-            grid-column: ac;
-        }
+        #calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto repeat(5, 60px);
+            gap: .5em;
 
-        .porcentagem {
-            grid-column: porcentagem;
-        }
-
-        .multiplicacao {
-            grid-column: multiplicacao;
-        }
-
-        .divisao {
-            grid-column: divisao;
-        }
-
-        .igual {
-            grid-column: igual;
-        }
-
-        .subtracao {
-            grid-column: subtracao;
-        }
-
-        .adicao {
-            grid-column: adicao;
-            grid-row: adicao;
-        }
-
-        .virgula {
-            grid-column: virgula;
-        }
-
-        .numero1 {
-            grid-column: numero1;
-            grid-row: numero1;
-        }
-        .numero2 {
-            grid-column: numero2;
-            grid-row: numero2;
+            background-image: linear-gradient(#557ca0, #2d4a74);
+            width: 300px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgb(0 0 0 / .8);
         }
         
-        .numero3 {
-            grid-column: numero3;
-            grid-row: numero3;
-        }
-        .numero4 {
-            grid-column: numero4;
-            grid-row: numero4;
+        #display, button {
+            background-image: linear-gradient(#353535, #1b1717);
+            color: white;
         }
 
-        .numero5 {
-            grid-column: numero5;
-            grid-row: numero5;
+        #display {
+            font-size: 2em;
+            box-shadow: inset 3px 3px 0 #161616;
+
+            padding: 10px 8px;
+            margin-bottom: 20px;
+
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
 
-        .numero6 {
-            grid-column: numero6;
-            grid-row: numero6;
+        button {
+            border: 2px solid black;
+            border-left-color: #8a8a8a;
+            border-top-color: #8a8a8a;
+            font-size: 1em;
+            
         }
 
-        .numero7 {
-            grid-column: numero7;
-            grid-row: numero7;
+        .span-row-2 {
+            /* grid-row: 5 / 7;
+            grid-column: 4 / 5; */
+            grid-row: span 2;
         }
 
-        .numero8 {
-            grid-column: numero8;
-            grid-row: numero8;
-        }
-
-        .numero9 {
-            grid-column: numero9;
-            grid-row: numero9;
-        }
-
-        .numero0 {
-            grid-column: numero0;
-            grid-row: numero0;
+        .span-column-2 {
+            /* grid-column: 1 / 3; */
+            grid-column: span 2;
         }
         </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="output">0</div>
-        <div class="botoes">
-            <div class="gridItem ac">AC</div>
-            <div class="gridItem porcentagem">%</div>
-            <div class="gridItem multiplicacao">x</div>
-            <div class="gridItem divisao">/</div>
-            <div class="gridItem igual">=</div>
-            <div class="gridItem subtracao">-</div>
-            <div class="gridItem adicao">+</div>
-            <div class="gridItem virgula">,</div>
-            <div class="gridItem numero0">0</div>
-            <div class="gridItem numero1">1</div>
-            <div class="gridItem numero2">2</div>
-            <div class="gridItem numero3">3</div>
-            <div class="gridItem numero4">4</div>
-            <div class="gridItem numero5">5</div>
-            <div class="gridItem numero6">6</div>
-            <div class="gridItem numero7">7</div>
-            <div class="gridItem numero8">8</div>
-            <div class="gridItem numero9">9</div>
-        </div>
+    <div id="calculator">
+        <output id="display">0</output>
+            <button>AC</button>
+            <button>%</button>
+            <button>X</button>
+            <button>/</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>=</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="span-row-2">+</button>
+            <button class="span-column-2">0</button>
+            <button>,</button>
     </div>
 </body>
 </html>
